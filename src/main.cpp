@@ -7,7 +7,7 @@
 
 Motor motors[2];
 
-uint16_t esc_1, esc_2;
+float esc_1, esc_2;
 
 uint32_t loop_start_time;
 
@@ -103,10 +103,10 @@ void setup()
 
 void loop()
 {
-    uint32_t pot = analogRead(POT_PIN);
-	uint32_t throttle = map(pot, 0, 4095, min_esc_pulse, max_esc_pulse);
+    float pot = analogRead(POT_PIN);
+	float throttle = map(pot, 0.0, 4095.0, (float)min_esc_pulse, (float)max_esc_pulse);
 
-    armed_state = throttle > pot_deadband ? ARMED : DISARMED;
+    armed_state = pot > pot_deadband ? ARMED : DISARMED;
 
 	if (armed_state == ARMED)
 	{

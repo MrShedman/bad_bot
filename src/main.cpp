@@ -82,14 +82,8 @@ void setup()
 	pinMode(LED1_PIN, OUTPUT);
 	pinMode(LED2_PIN, OUTPUT);
 
-	pinMode(MOT1_PIN, OUTPUT);
-	pinMode(MOT2_PIN, OUTPUT);
-
 	motors[0].begin(MOT1_PIN, min_esc_pulse, max_esc_pulse);
 	motors[1].begin(MOT2_PIN, min_esc_pulse, max_esc_pulse);
-
-	motors[0].write(min_esc_pulse);
-	motors[1].write(min_esc_pulse);
 
 	//calibrateESCs();
 

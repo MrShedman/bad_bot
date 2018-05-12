@@ -21,8 +21,9 @@ public:
 
 		setFrequency(8000.0);
 		analogWriteResolution(12);
-		digitalWriteFast(m_pin, LOW);
+
 		pinMode(m_pin, OUTPUT);
+		write(m_min);
 	}
 
 	void setFrequency(float freq)
